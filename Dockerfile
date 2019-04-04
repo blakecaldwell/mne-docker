@@ -31,13 +31,8 @@ RUN sudo apt-get install -y --no-install-recommends \
       qt5dxcb-plugin
 
 #still need to install mayavi and PySurfer[save_movie]
-RUN $HOME/miniconda/envs/mne/bin/pip install https://api.github.com/repos/enthought/mayavi/zipball/226189a6ad3dc3c01d031ef21d0d0cde554ac851 PySurfer[save_movie]
-
-#cleanup
-RUN rm -rf $HOME/.cache && \
-    sudo apt autoremove -y --purge && \
-    sudo apt clean
-
+RUN $HOME/miniconda/envs/mne/bin/pip install https://api.github.com/repos/enthought/mayavi/zipball/226189a6ad3dc3c01d031ef21d0d0cde554ac851 PySurfer[save_movie] && 
+    rm -rf $HOME/.cache
 
 # create the hnn shared folder (don't rely on docker daemon
 # to create it)
