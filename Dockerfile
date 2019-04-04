@@ -22,6 +22,7 @@ RUN curl -O https://raw.githubusercontent.com/blakecaldwell/mne-python/mayavi_li
 #RUN curl -O https://raw.githubusercontent.com/mne-tools/mne-python/master/environment.yml
 RUN $HOME/miniconda/bin/conda env create -f environment.yml
 RUN $HOME/miniconda/envs/mne/bin/pip install https://api.github.com/repos/enthought/mayavi/zipball/226189a6ad3dc3c01d031ef21d0d0cde554ac851 PySurfer[save_movie]
+RUN rm -rf $HOME/.cache
 
 # create the hnn shared folder (don't rely on docker daemon
 # to create it)
