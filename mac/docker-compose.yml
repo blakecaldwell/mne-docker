@@ -10,3 +10,6 @@ services:
       - "$HOME/.Xauthority:/.Xauthority"
       - "/tmp/.X11-unix:/tmp/.X11-unix"
       - "./shared:/home/mne_user/shared"
+    ports:
+      - "8888:8888"
+    command: "/home/mne_user/miniconda/envs/mne/bin/jupyter notebook"
